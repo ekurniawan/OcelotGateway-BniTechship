@@ -1,19 +1,23 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/Students",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/weatherforecast",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5001
+          "Port": 5000
         }
       ],
-      "UpstreamPathTemplate": "/api/Students",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamPathTemplate": "/api/weather",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5021"
+    "BaseUrl": "http://localhost:5020"
   }
 }
